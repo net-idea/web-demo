@@ -1,0 +1,16 @@
+{% extends '@NetIdeaWebBase/base.html.twig' %}
+
+{% block title %}
+  {{ pageMeta.title|default(siteName|default('Page')) }}
+{% endblock %}
+
+{% block masthead %}
+{% endblock %}
+
+{% block body %}
+  <main class="flex-shrink-0 py-5">
+    <div class="container">
+      {{ content|raw }}
+    </div>
+  </main>
+{% endblock %}

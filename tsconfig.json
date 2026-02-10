@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ES2015",
+    "lib": ["ES2015", "DOM"],
+    "moduleResolution": "node",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@web-base/*": ["vendor/net-idea/web-base/frontend/*"]
+    }
+  },
+  "include": [
+    "assets/**/*",
+    "vendor/net-idea/web-base/frontend/**/*"
+  ]
+}

@@ -1,0 +1,19 @@
+net_idea_web_base:
+  company:
+    name: 'Net Idea Demo Company'
+    email: 'info@netidea.demo'
+    phone: '+1 234 567 8900'
+    street: '123 Demo Street'
+    city: 'Demo City'
+    zip: '12345'
+    country: 'Demo Country'
+  site:
+    base_url: 'http://localhost:8000'
+    brand_name: 'Net Idea Web Demo'
+    site_name: 'Net Idea Web Demo'
+    default_description: 'A demonstration website built with Symfony and Bootstrap'
+  mail:
+    from_address: 'noreply@netidea.demo'
+    from_name: 'Net Idea Demo'
+    to_address: 'info@netidea.demo'
+    to_name: 'Net Idea Demo Team'

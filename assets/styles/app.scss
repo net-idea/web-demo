@@ -1,0 +1,28 @@
+// Import Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Import web-base styles
+@import "~@web-base/styles/app";
+
+// Custom demo styles
+body {
+    padding-top: 56px; // Offset for fixed navbar
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 30px 0;
+    margin-top: 50px;
+}
