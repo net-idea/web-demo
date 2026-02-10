@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Welcome{% endblock %} - Net Idea Web Demo</title>
     {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
 </head>
@@ -16,6 +17,7 @@
     {% include '@NetIdeaWebBase/_partials/footer.html.twig' %}
     
     {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
 </body>

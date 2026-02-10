@@ -31,6 +31,9 @@ Encore
     // Enable Sass/SCSS loader
     .enableSassLoader()
     
+    // Enable TypeScript loader
+    .enableTypeScriptLoader()
+    
     // Add alias for web-base frontend
     .addAliases({
         '@web-base': path.resolve(__dirname, 'packages/web-base/frontend'),
