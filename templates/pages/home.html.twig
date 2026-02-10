@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Welcome to Net Idea Web Demo</h1>
+            <p class="lead mb-4">A demonstration website built with Symfony, Bootstrap, and the NetIdea WebBase library</p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <a href="{{ path('about') }}" class="btn btn-light btn-lg px-4 gap-3">Learn More</a>
+                <a href="{{ path('contact') }}" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row text-center">
+            <div class="col-md-4 mb-4">
+                <div class="feature-icon text-primary">
+                    <i class="bi bi-speedometer2"></i>
+                    🚀
+                </div>
+                <h3>Fast & Modern</h3>
+                <p>Built with Symfony 6.4 and Bootstrap 5 for maximum performance and modern design</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-icon text-primary">
+                    <i class="bi bi-phone"></i>
+                    📱
+                </div>
+                <h3>Responsive</h3>
+                <p>Fully responsive design that works perfectly on desktop, tablet, and mobile devices</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="feature-icon text-primary">
+                    <i class="bi bi-shield-check"></i>
+                    🔒
+                </div>
+                <h3>Secure</h3>
+                <p>Built with security best practices and modern web technologies</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h2 class="text-center mb-4">About This Demo</h2>
+                <p class="lead">
+                    This is a demonstration website showcasing the NetIdea WebBase library, a reusable Symfony bundle
+                    that provides a complete foundation for corporate websites.
+                </p>
+                <p>
+                    The WebBase library includes:
+                </p>
+                <ul>
+                    <li>Ready-to-use controllers for common pages</li>
+                    <li>Contact form with validation and email notifications</li>
+                    <li>Dark/light theme support</li>
+                    <li>Responsive Bootstrap 5 design</li>
+                    <li>Webpack Encore integration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

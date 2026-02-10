@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  # PHP-FPM Service
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web-demo-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+      - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - web-demo-network
+    environment:
+      - APP_ENV=dev
+      - APP_SECRET=your-secret-key-here
+      - DATABASE_URL=mysql://root:root@db:3306/web_demo?serverVersion=8.0
+
+  # Nginx Service
+  webserver:
+    image: nginx:alpine
+    container_name: web-demo-webserver
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - web-demo-network
+    depends_on:
+      - app
+
+  # MySQL Service (optional)
+  db:
+    image: mysql:8.0
+    container_name: web-demo-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: web_demo
+      MYSQL_USER: web_demo
+      MYSQL_PASSWORD: web_demo
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - web-demo-network
+
+  # Node.js for Webpack Encore (development)
+  node:
+    image: node:18-alpine
+    container_name: web-demo-node
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    command: sh -c "npm install && npm run watch"
+    networks:
+      - web-demo-network
+    depends_on:
+      - app
+
+networks:
+  web-demo-network:
+    driver: bridge
+
+volumes:
+  db-data:

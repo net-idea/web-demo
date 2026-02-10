@@ -1,0 +1,2 @@
+net_idea_web_base:
+  resource: '@NetIdeaWebBaseBundle/config/routes.yaml'
